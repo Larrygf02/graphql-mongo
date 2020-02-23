@@ -25,6 +25,8 @@ const tyDefs = `
     type Mutation {
         createTask(input: TaskInput): Task
         createUser(input: UserInput): User
+        deleteUser(_id: ID): User
+        updateUser(_id: ID, input: UserInput): User
     }
 
     input TaskInput {
