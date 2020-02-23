@@ -5,6 +5,7 @@ const tyDefs = `
         hello: String
         greet(name: String!): String
         tasks: [Task]
+        Users: [User]
     }
 
     type Task {
@@ -13,15 +14,29 @@ const tyDefs = `
         description: String!
         number: Int
     }
+    
+    type User {
+        _id: ID
+        firstname: String!
+        lastname: String
+        age: Int
+    }
 
     type Mutation {
         createTask(input: TaskInput): Task
+        createUser(input: UserInput): User
     }
 
     input TaskInput {
         title: String!
         description: String!
         number: Int
+    }
+
+    input UserInput {
+        firstname: String!
+        lastname: String
+        age: Int
     }
 `
 
